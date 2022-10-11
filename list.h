@@ -3,7 +3,7 @@
 class list
 {
 private:
-	Node* head;
+	Node* head;//
 	Node* tail;
 public:
 	list();

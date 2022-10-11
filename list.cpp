@@ -24,7 +24,7 @@ void list::insert_specfic_Position(int Position, int newvalue) {
 	if (Position > Number_of_Nodes()) {
 		cout << "List has less nodes than the place, Node CAN't be inserted!!\n";
 		return;
-	}
+	}//
 	Node* NewNode = new Node;
 	NewNode->Data = newvalue;
 	Node* p = head;
