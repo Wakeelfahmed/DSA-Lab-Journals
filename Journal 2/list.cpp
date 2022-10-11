@@ -24,7 +24,7 @@ void list::insert_specfic_Position(int Position, int newvalue) {
 	if (Position > Number_of_Nodes()) {
 		cout << "List has less nodes than the place, Node CAN't be inserted!!\n";
 		return;
-	}//
+	}
 	Node* NewNode = new Node;
 	NewNode->Data = newvalue;
 	Node* p = head;
@@ -47,7 +47,20 @@ void list::insert_specfic_Position(int Position, int newvalue) {
 		position_count++;
 	}
 }
-void list::inser_after(int oldvalue, int newvalue) {
+void list::insert_after(int oldvalue, int newvalue) {
+	if (isEmpty())
+	{
+		cout << "List is Empty"; return;
+	}
+	Node* p = head;
+	while ((p != NULL) && (p->Data != oldvalue)) { p = p->next; }
+	if (p == NULL) { cout << "Node not found"; exit(0); }
+	Node* q = new Node;
+	q->Data = newvalue;
+	q->next = p->next;
+	p->next = q;
+}//Wrong
+/*void list::insert_after(int oldvalue, int newvalue) {
 	if (isEmpty())
 	{
 		cout << "List is empty";
@@ -62,13 +75,22 @@ void list::inser_after(int oldvalue, int newvalue) {
 			Node* NewNode = new Node;
 			NewNode->Data = newvalue;
 			if (position_count == Number_of_Nodes()) {
-				insert_end(newvalue);
+				p->next = NewNode;
+				tail = NewNode;
+				//insert_end(newvalue);
 			}
+			else
+			{
+				NewNode->next = p->next;
+				p->next = NewNode;
+				//insert_specfic_Position(position_count, newvalue);
+			}
+			return;
 		}
 		p = p->next;
 		position_count++;
 	}
-}
+}*/
 void list::insert_end(int value) {
 	Node* p = new Node;
 	p->Data = value;
@@ -121,7 +143,7 @@ int Search_in_List(int Value_to_search, list list) {
 		p = p->next;
 		Position_counter++;
 	}
-	return 0;
+	return 0; // no record found
 }
 /*void list::inser_after(int value, int newvalue) {
 	Node* r = new Node;

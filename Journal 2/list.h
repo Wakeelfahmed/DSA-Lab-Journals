@@ -3,7 +3,7 @@
 class list
 {
 private:
-	Node* head;//
+	Node* head;
 	Node* tail;
 public:
 	list();
@@ -12,12 +12,9 @@ public:
 	void insert_beg(int v);
 	void insert_end(int value);
 	void insert_specfic_Position(int place, int value);
-	void inser_after(int oldvalue, int newvalue);
+	void insert_after(int oldvalue, int newvalue);
 	void Display_list();
 	bool isEmpty();
 	int Number_of_Nodes();
-
 };
-//	void inser_at_position(int place, int value);
-
 
