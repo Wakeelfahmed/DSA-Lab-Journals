@@ -1,7 +1,6 @@
 #include<iostream>
 #include"list.h"
 using namespace std;
-//
 int Maximum_Number_in_List(list mylist) {
 	if (mylist.isEmpty())
 	{

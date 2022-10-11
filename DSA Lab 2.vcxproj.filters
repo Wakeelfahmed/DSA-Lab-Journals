@@ -13,27 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Journal 2">
-      <UniqueIdentifier>{312dae68-79ed-4ffc-914d-2cea7b2583af}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="list.cpp">
-      <Filter>Journal 2</Filter>
-    </ClCompile>
-    <ClCompile Include="Source.cpp">
-      <Filter>Journal 2</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="list.h">
-      <Filter>Journal 2</Filter>
-    </ClInclude>
-    <ClInclude Include="Node.h">
-      <Filter>Journal 2</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Journal 2\Node.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Journal 2\list.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Journal 2\list.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Journal 2\Source.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
