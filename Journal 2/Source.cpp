@@ -23,17 +23,20 @@ int main() {
 	int input = 0, Newvalue = 0;
 	list mylist;
 	mylist.Display_list();
-	mylist.insert_beg(3);	mylist.insert_beg(2);	mylist.insert_beg(1);
-	mylist.insert_beg(0);	mylist.Display_list();	mylist.insert_end(4);
+	mylist.insert_beg(3);
+	mylist.insert_beg(2);
+	mylist.insert_beg(1);
+	mylist.insert_beg(0);
+	mylist.Display_list();
+	mylist.insert_end(4);
 	mylist.Display_list();
 	while (1)
 	{
-		cout << "Enter the value to Delete\n";
-		cin >> input;
-		mylist.delete_Node(input);
+		cout << "Enter the value to search & the value u want to insert\n";
+		cin >> input >> Newvalue;
+		mylist.insert_after(input, Newvalue);
 		mylist.Display_list();
-		if (!mylist.isEmpty())
-			cout << "Head:" << mylist.get_head()->Data << "\tTail:" << mylist.get_tail()->Data << endl;
+		cout << "Head:" << mylist.get_head()->Data << "\tTail:" << mylist.get_tail()->Data << endl;
 	}
 }
 //cout << "There are " << mylist.Number_of_Nodes() << " Nodes in the list" << endl;

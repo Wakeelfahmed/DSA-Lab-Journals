@@ -91,55 +91,6 @@ void list::insert_after(int oldvalue, int newvalue) {
 		position_count++;
 	}
 }*/
-void list::delete_Node(int Value_to_delete) {
-	if (isEmpty())
-	{
-		cout << "List is Empty"; return;
-	}
-	Node* p = head;
-	while (p != NULL) {
-		//if (p->next == NULL && p->Data != Value_to_delete)
-		{
-		//	cout << "Node not in the list";
-		//	return;
-		}
-		if(head == tail && Value_to_delete == head->Data) {
-			cout << "true";
-			delete p;
-			head = NULL; tail = NULL;
-			return;
-		}
-		else if (head->Data == Value_to_delete) {
-			//cout << "HEAD loop->next->Data:" << (p->next->Data) << endl;
-			head = p->next;
-			cout << "p->Data " << p->Data;
-			delete p;
-			return;
-		}
-		else if (tail->Data == Value_to_delete && p->next->Data == Value_to_delete) {
-			//cout << "me";
-			delete p->next;
-			p->next = NULL;
-			tail = p;
-			return;
-		}
-		else if (p->next->Data == Value_to_delete && !(tail->Data == Value_to_delete))
-		{
-			Node* Temp = p->next->next;
-			cout << "p->next->Data " << p->next->Data;
-			delete p->next;
-			p->next = Temp;
-			cout << " \tDeleted p->next->Data " << endl;
-			return;
-		}
-		p = p->next;
-		//if (p.next == NULL && p->Data != Value_to_delete)
-		{
-			//cout << "Node not in the list";
-			//return;
-		}
-	}
-}
 void list::insert_end(int value) {
 	Node* p = new Node;
 	p->Data = value;
@@ -194,3 +145,18 @@ int Search_in_List(int Value_to_search, list list) {
 	}
 	return 0; // no record found
 }
+/*void list::inser_after(int value, int newvalue) {
+	Node* r = new Node;
+	Node* q;
+
+	Node* p = head;
+	while (p != NULL && (p->Data != value))
+	{
+		p = p->next;
+	}
+	if (p == NULL)
+	{
+		cout << "Node not found";
+		return;
+	}
+}*/
