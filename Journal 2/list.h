@@ -13,6 +13,7 @@ public:
 	void insert_end(int value);
 	void insert_specfic_Position(int place, int value);
 	void insert_after(int oldvalue, int newvalue);
+	void delete_Node(int Value_to_delete);
 	void Display_list();
 	bool isEmpty();
 	int Number_of_Nodes();

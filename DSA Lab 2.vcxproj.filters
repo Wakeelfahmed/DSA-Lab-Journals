@@ -15,22 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <ClCompile Include="Journal 3\list.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Journal 3\Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Journal 3\Student.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Journal 2\Node.h">
-      <Filter>Resource Files</Filter>
+    <ClInclude Include="Journal 3\list.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Journal 2\list.h">
-      <Filter>Resource Files</Filter>
+    <ClInclude Include="Journal 3\Node.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Journal 2\list.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Journal 2\Source.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
+    <ClInclude Include="Journal 3\Student.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

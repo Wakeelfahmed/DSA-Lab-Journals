@@ -127,15 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <ClCompile Include="Journal 3\list.cpp" />
+    <ClCompile Include="Journal 3\Source.cpp" />
+    <ClCompile Include="Journal 3\Student.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Journal 2\list.h" />
-    <ClInclude Include="Journal 2\Node.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Journal 2\list.cpp" />
-    <ClCompile Include="Journal 2\Source.cpp" />
+    <ClInclude Include="Journal 3\list.h" />
+    <ClInclude Include="Journal 3\Node.h" />
+    <ClInclude Include="Journal 3\Student.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
