@@ -18,22 +18,11 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Journal 3\list.cpp" />
-    <ClCompile Include="Journal 3\Node.cpp" />
-    <ClCompile Include="Journal 3\Source.cpp" />
-    <ClCompile Include="Journal 3\Student.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Journal 3\list.h" />
-    <ClInclude Include="Journal 3\Node.h" />
-    <ClInclude Include="Journal 3\Student.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{f1124800-5cfe-4b94-971e-8b42049669b8}</ProjectGuid>
-    <RootNamespace>DSALab2</RootNamespace>
+    <ProjectGuid>{c25fcfeb-7268-414c-ad8c-df2c698beb9f}</ProjectGuid>
+    <RootNamespace>DSALabJournals</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -137,6 +126,16 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Journal 3\list.cpp" />
+    <ClCompile Include="Journal 3\Node.cpp" />
+    <ClCompile Include="Journal 3\Source.cpp" />
+    <ClCompile Include="Journal 3\Student.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Journal 3\list.h" />
+    <ClInclude Include="Journal 3\Node.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
