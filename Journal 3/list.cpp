@@ -1,4 +1,3 @@
-//#pragma once
 #include"list.h" 
 using namespace std;
 list::list() : head(NULL), tail(NULL) {}
@@ -18,24 +17,23 @@ void list::insert_beg(Student student) {
 		p->next = head;
 	head = p;
 }
-void list::insert_specfic_Position(int Position, string name, string enroll) {
+void list::insert_specfic_Position(int Position, Student student) {
 	int position_count = 1;
 	if (Position > Number_of_Nodes()) {
 		cout << "List has less nodes than the place, Node CAN't be inserted!!\n";
 		return;
 	}
 	Node* NewNode = new Node;
-	NewNode->Student_Data.set_enrollment(enroll);
-	NewNode->Student_Data.set_name(name);
+	NewNode->Student_Data = student;
 	Node* p = head;
 	while (p != NULL)
 	{
 		if (Position == 1) {
-			insert_beg(name, enroll);
+			insert_beg(student);
 			return;
 		}
 		else if (Position == Number_of_Nodes()) {
-			insert_end(name, enroll);
+			insert_end(student);
 			return;
 		}
 		else if (position_count == Position - 1 && Position != 0) {
@@ -78,10 +76,9 @@ void list::insert_after(Student oldvalue, Student newvalue) {
 		position_count++;
 	}
 }
-void list::insert_end(string name, string enroll) {
+void list::insert_end(Student student) {
 	Node* p = new Node;
-	p->Student_Data.set_name(name);
-	p->Student_Data.set_enrollment(enroll);
+	p->Student_Data = student;
 	if (isEmpty())
 	{
 		tail = p;
@@ -101,7 +98,8 @@ void list::Display_list() {
 	cout << "List: " << endl;
 	while (p != NULL)
 	{
-		cout << "enrollment" << p->Student_Data.get_enrollment() << "\tname:" << p->Student_Data.get_enrollment() << endl;
+		cout << "name:" << p->Student_Data.get_name()
+			<< "\tenrollment:" << p->Student_Data.get_enrollment() << endl;
 		p = p->next;
 	}
 	cout << endl;
@@ -121,16 +119,3 @@ int list::Number_of_Nodes() {
 	}
 	return Counter;
 }
-/*int Search_in_List(string name, string enroll, list list) {
-	Node* p = list.get_head();
-	int Position_counter = 1;
-	while (p != NULL)
-	{
-		if ((p->Student_Data.get_enrollment()) == (Value_to_search.get_enrollment()))
-			return Position_counter;
-		p = p->next;
-		Position_counter++;
-	}
-	return 0; // no record found
-}*/
-

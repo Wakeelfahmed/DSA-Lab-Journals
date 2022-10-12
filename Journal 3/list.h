@@ -1,7 +1,5 @@
 #pragma once
 #include"Node.h"
-//#include"Student.h"
-//#include<string>
 class list
 {
 private:
@@ -12,9 +10,9 @@ public:
 	Node* get_head() const;
 	Node* get_tail() const;
 	void insert_beg(Student student);
-	void insert_specfic_Position(int place, string name, string enroll);
+	void insert_specfic_Position(int place, Student student);
 	void insert_after(Student oldvalue, Student newvalue);
-	void insert_end(string name, string enroll);
+	void insert_end(Student student);
 	void Display_list();
 	bool isEmpty();
 	int Number_of_Nodes();

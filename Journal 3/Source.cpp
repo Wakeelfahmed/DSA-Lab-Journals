@@ -1,22 +1,36 @@
 #include<iostream>
 #include"list.h"
-//#include"Node.h"
-//#include"Student.h"
-//using namespace std;
-
-//int main() { cout << "h"; }
-/*void union_of_list(Node* first, Node* second) {
-
-}*/
+/*void union_of_list(Node* first, Node* second) {}*/
+int Search_in_List(Student student_to_search, list list) {
+	Node* p = list.get_head();
+	int Position_counter = 1;
+	while (p != NULL)
+	{
+		if (p->Student_Data == student_to_search) {
+			cout << "found at position:" << Position_counter << endl;
+			return Position_counter;
+		}
+		p = p->next;
+		Position_counter++;
+	}
+	return 0; // no record found
+}
 int main() {
 	int input = 0, Newvalue = 0;
 	list mylist;
-	Student me("wakeel", "01-134212-192");
+	Student me("wakeel", "1");
+	Student me1("furqan", "2");
+	Student me2("ahmed", "3");
 	mylist.Display_list();
-	//mylist.insert_beg(3);	mylist.insert_beg(2);	mylist.insert_beg(1);
+	mylist.insert_beg(me2);
+	mylist.insert_beg(me1);
+	mylist.insert_beg(me);
+	mylist.Display_list();
+	if (Search_in_List(me1, mylist))
+		cout << "Found at:" << Search_in_List(me, mylist) << endl;
+	else cout << "Not Found" << endl;
 	//mylist.insert_beg(0);	mylist.Display_list();	mylist.insert_end(4);
-	mylist.Display_list();
-	while (1)
+	while (0)
 	{
 		cout << "Enter the value to Delete\n";
 		cin >> input;
@@ -26,5 +40,3 @@ int main() {
 			//cout << "Head:" << mylist.get_head()->Data << "\tTail:" << mylist.get_tail()->Data << endl;
 	}
 }
-//cout << "There are " << mylist.Number_of_Nodes() << " Nodes in the list" << endl;
-//cout << "Maximum_Number_in_List is: " << Maximum_Number_in_List(mylist) << endl;
