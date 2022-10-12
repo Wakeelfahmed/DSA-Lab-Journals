@@ -127,9 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Journal 2\list.h" />
     <ClInclude Include="Journal 2\Node.h" />
   </ItemGroup>
