@@ -18,6 +18,17 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Journal 3\list.cpp" />
+    <ClCompile Include="Journal 3\Node.cpp" />
+    <ClCompile Include="Journal 3\Source.cpp" />
+    <ClCompile Include="Journal 3\Student.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Journal 3\list.h" />
+    <ClInclude Include="Journal 3\Node.h" />
+    <ClInclude Include="Journal 3\Student.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -126,14 +137,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="list.cpp" />
-    <ClCompile Include="Source.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Node.h" />
-    <ClInclude Include="list.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
