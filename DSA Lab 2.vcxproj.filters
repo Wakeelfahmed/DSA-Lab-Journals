@@ -15,19 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Journal 2\Node.h">
+    <ClCompile Include="Journal 3\list.cpp">
       <Filter>Resource Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Journal 2\list.h">
+    </ClCompile>
+    <ClCompile Include="Journal 3\Source.cpp">
       <Filter>Resource Files</Filter>
-    </ClInclude>
+    </ClCompile>
+    <ClCompile Include="Journal 3\Student.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Journal 2\list.cpp">
+    <ClInclude Include="Journal 3\list.h">
       <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Journal 2\Source.cpp">
+    </ClInclude>
+    <ClInclude Include="Journal 3\Node.h">
       <Filter>Resource Files</Filter>
-    </ClCompile>
+    </ClInclude>
+    <ClInclude Include="Journal 3\Student.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
