@@ -92,21 +92,7 @@ int main() {
 			break;
 		}
 		}
+		cout << "\n";
 		Main_Menu();
-	}
-	Display_headTail(mylist);
-	mylist.Display_list();
-	if (Search_in_List_by_enroll(mylist))
-		cout << "Found at:" << Search_in_List_by_enroll(mylist) << endl;
-	else cout << "Not Found" << endl;
-	//mylist.insert_beg(0);	mylist.Display_list();	mylist.insert_end(4);
-	while (0)
-	{
-		cout << "Enter the value to Delete\n";
-		cin >> input;
-		//mylist.delete_Node(input);
-		mylist.Display_list();
-		//if (!mylist.isEmpty())
-			//cout << "Head:" << mylist.get_head()->Data << "\tTail:" << mylist.get_tail()->Data << endl;
 	}
 }

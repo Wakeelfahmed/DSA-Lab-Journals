@@ -21,10 +21,10 @@
     <ClCompile Include="Journal 3\Node.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Journal 3\Source.cpp">
+    <ClCompile Include="Journal 3\Student.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Journal 3\Student.cpp">
+    <ClCompile Include="Journal 3\Q3 Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
