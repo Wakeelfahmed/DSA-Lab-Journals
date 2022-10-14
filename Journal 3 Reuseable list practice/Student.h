@@ -5,8 +5,8 @@ using namespace std;
 class Student
 {
 private:
-	string name;
 	string enrollment;
+	string name;
 public:
 	Student();
 	Student(string name, string enrollment);
@@ -14,6 +14,6 @@ public:
 	void set_name(string name);
 	string get_enrollment() const;
 	string get_name() const;
-	void set_Student_Detail(string name, string enroll);
+	//Student get_Student() const { return *this; }
 	bool operator== (Student s1) const;
 };

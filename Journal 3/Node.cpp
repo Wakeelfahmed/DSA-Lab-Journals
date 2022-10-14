@@ -1,2 +1,2 @@
 #include"Node.h"
-Student_Node::Student_Node() : next(0) {}
+Node::Node() : next(NULL) {}
