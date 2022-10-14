@@ -3,7 +3,7 @@
 class Node
 {
 public:
-	Student Student_Data;
+	int Data;
 	Node* next;
 	Node();
 };

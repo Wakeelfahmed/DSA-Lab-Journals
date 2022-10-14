@@ -130,7 +130,6 @@
     <ClCompile Include="Journal 3\list.cpp" />
     <ClCompile Include="Journal 3\Node.cpp" />
     <ClCompile Include="Journal 3\Q3 Source.cpp" />
-    <ClCompile Include="Journal 3\Student.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Journal 3\list.h" />
