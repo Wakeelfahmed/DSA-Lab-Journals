@@ -1,6 +1,6 @@
 #include"list.h" 
 using namespace std;
-Student me;
+//Student me;
 list::list() : head(NULL), tail(NULL) {}
 Node* list::get_head() { return head; }
 Node* list::get_tail() { return tail; }

@@ -100,8 +100,8 @@ void list::delete_Node(int Value_to_delete) {
 	while (p != NULL) {
 		if (p->next == NULL && p->Data != Value_to_delete)
 		{
-				cout << "Node not in the list";
-				return;
+			cout << "Node not in the list";
+			return;
 		}
 		if (head == tail && Value_to_delete == head->Data) {
 			cout << "true";
@@ -110,14 +110,11 @@ void list::delete_Node(int Value_to_delete) {
 			return;
 		}
 		else if (head->Data == Value_to_delete) {
-			//cout << "HEAD loop->next->Data:" << (p->next->Data) << endl;
 			head = p->next;
-			cout << "p->Data " << p->Data;
 			delete p;
 			return;
 		}
 		else if (tail->Data == Value_to_delete && p->next->Data == Value_to_delete) {
-			//cout << "me";
 			delete p->next;
 			p->next = NULL;
 			tail = p;
@@ -126,10 +123,8 @@ void list::delete_Node(int Value_to_delete) {
 		else if (p->next->Data == Value_to_delete && !(tail->Data == Value_to_delete))
 		{
 			Node* Temp = p->next->next;
-			cout << "p->next->Data " << p->next->Data;
 			delete p->next;
 			p->next = Temp;
-			cout << " \tDeleted p->next->Data " << endl;
 			return;
 		}
 		p = p->next;
@@ -151,21 +146,6 @@ void list::insert_end(int value) {
 		tail->next = p;
 		tail = p;
 	}
-}
-void list::Display_list() {
-	if (isEmpty())
-	{
-		cout << "list is empty!!" << endl;
-		return;
-	}
-	Node* p = head;
-	cout << "List: \t";
-	while (p != NULL)
-	{
-		cout << p->Data << "\t";
-		p = p->next;
-	}
-	cout << endl;
 }
 int list::Number_of_Nodes() {
 	if (isEmpty())
@@ -194,10 +174,37 @@ int Search_in_List(int Value_to_search, list list) {
 	}
 	return 0; // no record found
 }
+void list::Display_list() {
+	if (isEmpty())
+	{
+		cout << "list is empty!!" << endl;
+		return;
+	}
+	Node* p = head;
+	cout << "List: \t";
+	while (p != NULL)
+	{
+		cout << p->Data << "\t";
+		p = p->next;
+	}
+}
+list::~list() {
+	Node* p = head;
+	Node* q = head->next;
+	while (p != NULL)
+	{
+		cout << "Deleting NODE:" << p->Data << endl;
+		delete p;
+		p = q;
+		Display_list();
+		if (p != NULL)
+			q = q->next;
+	}
+}
 
 
 
-/*#include"list.h" 
+/*#include"list.h"
 using namespace std;
 list::list() : head(NULL), tail(NULL) {}
 Node* list::get_head() const { return head; }

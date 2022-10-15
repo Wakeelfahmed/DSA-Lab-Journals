@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DSA Lab Journals", "DSA Lab Journals.vcxproj", "{C25FCFEB-7268-414C-AD8C-DF2C698BEB9F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AC7C6318-E64F-4256-83F1-F5E99726104F}"
-	ProjectSection(SolutionItems) = preProject
-		Journal 3\Student.h = Journal 3\Student.h
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -17,4 +17,5 @@ public:
 	void Display_list();
 	bool isEmpty();
 	int Number_of_Nodes();
+	~list();
 };

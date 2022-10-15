@@ -1,7 +1,7 @@
 #include<iostream>
 #include<conio.h>
 #include"list.h"
-/*void union_of_list(Node* first, Node* second) {}*/
+
 int Search_in_List_by_enroll(list list) {
 	string enroll;
 	cout << "Enter ID to find student:";
@@ -19,11 +19,6 @@ int Search_in_List_by_enroll(list list) {
 		Position_counter++;
 	}
 	return 0; // no record found
-}
-void Display_headTail(list list) {
-	if (!list.isEmpty())
-		cout << "Head:" << list.get_head()->Student_Data.get_name()
-		<< "\tTail:" << list.get_tail()->Student_Data.get_name() << endl;
 }
 void Validate_Input(int start, int& input, int end) {
 	while (input < start || input > end)
