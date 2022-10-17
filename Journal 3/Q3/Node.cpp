@@ -1,2 +1,2 @@
 #include"Node.h"
-Node::Node() : next(NULL) , Data(0) {}
+Node::Node() : next(0) , Data(0) {}

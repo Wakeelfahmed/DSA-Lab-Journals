@@ -1,6 +1,7 @@
 #include<iostream>
 #include<conio.h>
 #include"list.h"
+using namespace std;
 void Display_headTail(list list) {
 	if (!list.isEmpty())
 		cout << "Head:" << list.get_head()->Data
