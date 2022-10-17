@@ -78,8 +78,10 @@ void list::insert_beg(Student_Node** NewNode1) {
 }*/
 void list::insert_end(Student_Node** Node) {
 	Student_Node* NewNode = *Node;
-	if (isEmpty())
+	if (isEmpty()){
+		head = NewNode; //just added, to check
 		tail = NewNode;
+	}
 	else {
 		tail->next = NewNode;
 		tail = NewNode;

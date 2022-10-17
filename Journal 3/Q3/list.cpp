@@ -108,13 +108,11 @@ void list::insert_end(int value) {
 	Node* p = new Node;
 	p->Data = value;
 	if (isEmpty())
-	{
-		tail = p;
-	}
-	else {
+		head = p;
+	else
 		tail->next = p;
-		tail = p;
-	}
+
+	tail = p;
 }
 int list::Number_of_Nodes() {
 	if (isEmpty())
@@ -157,6 +155,7 @@ void list::Display_list() {
 		p = p->next;
 	}
 }
+
 list::~list() {
 	Node* p = head;
 	Node* q = head->next;
@@ -168,6 +167,4 @@ list::~list() {
 		if (p != NULL)
 			q = q->next;
 	}
-		Display_list();
-
 }

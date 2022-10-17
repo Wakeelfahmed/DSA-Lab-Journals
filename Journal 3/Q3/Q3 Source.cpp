@@ -66,7 +66,12 @@ int Maximum_Number_in_List(Node* head) {
 	return Maximum_Number;
 }
 int main() {
-	int input;
+	//int input;
+	cout << "OI";
+	mylist.insert_end(55);
+	Display_headTail(mylist);
+	return 1;
+	_getch();/*
 	for (size_t i = 10; i > 0; i--)
 	{
 		mylist.insert_beg(i);
@@ -77,7 +82,6 @@ int main() {
 	cout << "Maximum Number in List is:" <<
 		Maximum_Number_in_List(mylist.get_head()) << endl;
 
-	return 1;
 
 	while (0)
 	{
@@ -88,4 +92,5 @@ int main() {
 		if (!mylist.isEmpty())
 			cout << "Head:" << mylist.get_head()->Data << "\tTail:" << mylist.get_tail()->Data << endl;
 	}
+	*/
 }
