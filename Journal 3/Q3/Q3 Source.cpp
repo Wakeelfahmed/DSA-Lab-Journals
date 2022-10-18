@@ -7,9 +7,7 @@ void Display_headTail(list list) {
 		cout << "Head:" << list.get_head()->Data
 		<< "\tTail:" << list.get_tail()->Data << endl;
 }
-list mylist;
 void Swap(list& list) {
-	int TEMPVALUE;
 	Node* Temp;
 	int Half_of_list = list.Number_of_Nodes() / 2;
 	int position_count = 1;
@@ -66,12 +64,21 @@ int Maximum_Number_in_List(Node* head) {
 	return Maximum_Number;
 }
 int main() {
+	list mylist;
 	//int input;
-	cout << "OI";
+	mylist.insert_beg(4);
+
 	mylist.insert_end(55);
-	Display_headTail(mylist);
-	return 1;
-	_getch();/*
+	mylist.Display_list();
+	mylist.insert_beg(800);
+	cout << "800 inserted";
+	mylist.Display_list();
+	mylist.insert_end(60);
+	mylist.insert_end(65);
+	mylist.Display_list();
+	//Display_headTail(mylist);
+}
+	/*
 	for (size_t i = 10; i > 0; i--)
 	{
 		mylist.insert_beg(i);
@@ -93,4 +100,3 @@ int main() {
 			cout << "Head:" << mylist.get_head()->Data << "\tTail:" << mylist.get_tail()->Data << endl;
 	}
 	*/
-}

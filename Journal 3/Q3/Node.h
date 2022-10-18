@@ -5,4 +5,5 @@ public:
 	int Data;
 	Node* next;
 	Node();
+	Node(int Data);
 };

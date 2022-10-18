@@ -1,5 +1,4 @@
 #include"list.h"
-//#include"Node.h"
 #include<iostream>
 using namespace std;
 list::list() : head(NULL), tail(NULL) {}
@@ -11,8 +10,7 @@ bool list::isEmpty() {
 	return false;
 }
 void list::insert_beg(int v) {
-	Node* p = new Node;
-	p->Data = v;
+	Node* p = new Node(v);	//p->Data = v;
 	if (isEmpty())
 		tail = p;
 	else
@@ -25,8 +23,7 @@ void list::insert_specfic_Position(int Position, int newvalue) {
 		cout << "List has less nodes than the place, Node CAN't be inserted!!\n";
 		return;
 	}
-	Node* NewNode = new Node;
-	NewNode->Data = newvalue;
+	Node* NewNode = new Node(newvalue);		//NewNode->Data = newvalue;
 	Node* p = head;
 	while (p != NULL)
 	{
@@ -55,11 +52,18 @@ void list::insert_after(int oldvalue, int newvalue) {
 	Node* p = head;
 	while ((p != NULL) && (p->Data != oldvalue)) { p = p->next; }
 	if (p == NULL) { cout << "Node not found"; exit(0); }
-	Node* q = new Node;
-	q->Data = newvalue;
+	Node* q = new Node(newvalue);	//q->Data = newvalue;
 	q->next = p->next;
 	p->next = q;
 }//Wrong
+void list::insert_end(int value) {
+	Node* p = new Node(value);	//p->Data = value;
+	if (isEmpty())
+		head = p;
+	else
+		tail->next = p;
+	tail = p;
+}
 void list::delete_Node(int Value_to_delete) {
 	if (isEmpty())
 	{
@@ -104,16 +108,6 @@ void list::delete_Node(int Value_to_delete) {
 		}
 	}
 }
-void list::insert_end(int value) {
-	Node* p = new Node;
-	p->Data = value;
-	if (isEmpty())
-		head = p;
-	else
-		tail->next = p;
-
-	tail = p;
-}
 int list::Number_of_Nodes() {
 	if (isEmpty())
 	{
@@ -155,13 +149,12 @@ void list::Display_list() {
 		p = p->next;
 	}
 }
-
 list::~list() {
 	Node* p = head;
 	Node* q = head->next;
 	while (p != NULL)
 	{
-		cout << "Deleting NODE:" << p->Data << endl;
+		//cout << "Deleting NODE:" << endl;
 		delete p;
 		p = q;
 		if (p != NULL)

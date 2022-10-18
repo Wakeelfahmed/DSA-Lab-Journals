@@ -1,7 +1,7 @@
 #pragma once
 #include"Node.h"
 class list
-{
+{								
 private:
 	Node* head;
 	Node* tail;
@@ -17,5 +17,5 @@ public:
 	void Display_list();
 	bool isEmpty();
 	int Number_of_Nodes();
-	//~list();
+	~list();
 };
