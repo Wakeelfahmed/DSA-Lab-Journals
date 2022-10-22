@@ -4,7 +4,7 @@ using namespace std;
 list::list() : head(NULL), tail(NULL) {}
 Node* list::get_head() const { return head; }
 Node* list::get_tail() const { return tail; }
-bool list::isEmpty() {
+bool list::isEmpty() const {
 	if (head == NULL)
 		return true;
 	return false;
@@ -64,51 +64,93 @@ void list::insert_end(int value) {
 		tail->next = p;
 	tail = p;
 }
-void list::delete_Node(int Value_to_delete) {
-	if (isEmpty())
+int Search_in_List(int Value_to_search, list list) {
+	Node* p = list.get_head();
+	int Position_counter = 1;
+	while (p != NULL)
 	{
-		cout << "List is Empty"; return;
+		if (p->Data == Value_to_search)
+			return Position_counter;
+		p = p->next;
+		Position_counter++;
+	}
+	return 0; // no record found
+}
+void list::delete_Node(int Value_to_delete) {
+	if (isEmpty()) {
+		cout << "List is Empty\n"; return;
+	}
+	else if (!Search_in_List(Value_to_delete, *this)) {
+		cout << "Not found in list\n"; return;
 	}
 	Node* p = head;
-	while (p != NULL) {
-		if (p->next == NULL && p->Data != Value_to_delete)
+	Node* Temp;
+	if (Value_to_delete == head->Data) {
+		Temp = p;
+		head = p->next;
+		delete Temp;
+		return;
+	}
+	while (p != NULL)
+	{
+		if (p->next->Data == Value_to_delete)
 		{
-			cout << "Node not in the list";
-			return;
-		}
-		if (head == tail && Value_to_delete == head->Data) {
-			cout << "true";
-			delete p;
-			head = NULL; tail = NULL;
-			return;
-		}
-		else if (head->Data == Value_to_delete) {
-			head = p->next;
-			delete p;
-			return;
-		}
-		else if (tail->Data == Value_to_delete && p->next->Data == Value_to_delete) {
-			delete p->next;
-			p->next = NULL;
-			tail = p;
-			return;
-		}
-		else if (p->next->Data == Value_to_delete && !(tail->Data == Value_to_delete))
-		{
-			Node* Temp = p->next->next;
-			delete p->next;
-			p->next = Temp;
+			cout << "abr\n";
+			Temp = p->next;
+			p->next = p->next->next;
+			delete Temp;
+			if ((p->next == NULL))
+				tail = p;
 			return;
 		}
 		p = p->next;
-		if (p->next == NULL && p->Data != Value_to_delete)
-		{
-			cout << "Node not in the list";
-			return;
-		}
 	}
 }
-int list::Number_of_Nodes() {
+//void list::delete_Node(int Value_to_delete) {
+//	if (isEmpty())
+//	{
+//		cout << "List is Empty"; return;
+//	}
+//	Node* p = head;
+//	while (p != NULL) {
+//		if (p->next == NULL && p->Data != Value_to_delete)
+//		{
+//			cout << "Node not in the list";
+//			return;
+//		}
+//		if (head == tail && Value_to_delete == head->Data) {
+//			cout << "true";
+//			delete p;
+//			head = NULL; tail = NULL;
+//			return;
+//		}
+//		else if (head->Data == Value_to_delete) {
+//			head = p->next;
+//			delete p;
+//			return;
+//		}
+//		else if (tail->Data == Value_to_delete && p->next->Data == Value_to_delete) {
+//			delete p->next;
+//			p->next = NULL;
+//			tail = p;
+//			return;
+//		}
+//		else if (p->next->Data == Value_to_delete && !(tail->Data == Value_to_delete))
+//		{
+//			Node* Temp = p->next->next;
+//			delete p->next;
+//			p->next = Temp;
+//			return;
+//		}
+//		p = p->next;
+//		if (p->next == NULL && p->Data != Value_to_delete)
+//		{
+//			cout << "Node not in the list";
+//			return;
+//		}
+//	}
+//}
+int list::Number_of_Nodes() const {
 	if (isEmpty())
 	{
 		cout << "list is empty!! \n there are no nodes." << endl;
@@ -123,19 +165,7 @@ int list::Number_of_Nodes() {
 	}
 	return Counter;
 }
-int Search_in_List(int Value_to_search, list list) {
-	Node* p = list.get_head();
-	int Position_counter = 1;
-	while (p != NULL)
-	{
-		if (p->Data == Value_to_search)
-			return Position_counter;
-		p = p->next;
-		Position_counter++;
-	}
-	return 0; // no record found
-}
-void list::Display_list() {
+void list::Display_list() const {
 	if (isEmpty())
 	{
 		cout << "list is empty!!" << endl;
@@ -149,15 +179,29 @@ void list::Display_list() {
 		p = p->next;
 	}
 }
-list::~list() {
+//list::~list() {
+//	Node* currentNode = head; // initialize current node to root
+//	while (currentNode != NULL)
+//	{
+//				cout << "Deleting NODE:"  <<currentNode->Data << endl;
+//		Node* nextNode = currentNode->next;    // get next node
+//		delete currentNode;                         // delete current
+//		currentNode = nextNode;                     // set current to "old" next
+//	}
+//}
+/*list::~list() {
+	int test;
 	Node* p = head;
 	Node* q = head->next;
 	while (p != NULL)
 	{
-		//cout << "Deleting NODE:" << endl;
+		test = p->next;
+		cout << "Deleting NODE:" << p->Data << "\t\t";		cout << p->next << endl;
+		if (p->next == 0)
+			return;
 		delete p;
 		p = q;
 		if (p != NULL)
 			q = q->next;
 	}
-}
+}*/

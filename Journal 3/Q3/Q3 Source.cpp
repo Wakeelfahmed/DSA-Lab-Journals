@@ -64,19 +64,22 @@ int Maximum_Number_in_List(Node* head) {
 	return Maximum_Number;
 }
 int main() {
+	int input;
 	list mylist;
-	//int input;
-	mylist.insert_beg(4);
-
-	mylist.insert_end(55);
+	mylist.insert_end(1);
+	mylist.insert_end(2);
+	mylist.insert_end(3);
+	mylist.insert_end(4);
+	mylist.insert_end(5);
 	mylist.Display_list();
-	mylist.insert_beg(800);
-	cout << "800 inserted";
-	mylist.Display_list();
-	mylist.insert_end(60);
-	mylist.insert_end(65);
-	mylist.Display_list();
-	//Display_headTail(mylist);
+	Display_headTail(mylist);
+	while (1)
+	{
+		cout << "Delete Node? ";  input = _getch() - '0';
+		mylist.delete_Node(input);
+		mylist.Display_list();
+		Display_headTail(mylist);
+	}
 }
 	/*
 	for (size_t i = 10; i > 0; i--)

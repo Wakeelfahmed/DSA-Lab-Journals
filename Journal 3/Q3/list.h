@@ -1,7 +1,7 @@
 #pragma once
 #include"Node.h"
 class list
-{								
+{
 private:
 	Node* head;
 	Node* tail;
@@ -14,8 +14,8 @@ public:
 	void insert_specfic_Position(int place, int value);
 	void insert_after(int oldvalue, int newvalue);
 	void delete_Node(int Value_to_delete);
-	void Display_list();
-	bool isEmpty();
-	int Number_of_Nodes();
-	~list();
+	void Display_list() const;
+	bool isEmpty() const;
+	int Number_of_Nodes()const ;
+	//~list();
 };
