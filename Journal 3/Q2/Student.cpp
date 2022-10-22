@@ -1,5 +1,4 @@
 #include"Student.h"
-
 Student::Student() : enrollment(""), name("") {}
 Student::Student(string name, string enrollment) : name(name), enrollment(enrollment) {}
 void Student::set_enrollment(string enrollment) { this->enrollment = enrollment; }
