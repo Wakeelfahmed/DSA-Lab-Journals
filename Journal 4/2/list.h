@@ -3,7 +3,7 @@
 class circular_list
 {
 private:
-	Node* Head;
+	Node* head;
 public:
 	circular_list();
 	Node* get_head() const;
@@ -17,9 +17,5 @@ public:
 	int Number_of_Nodes()const;
 	~circular_list();
 	circular_list concatenate(const circular_list & list2);
-	circular_list(circular_list& obj) {
-		Head = obj.Head;
-	}
-
-	//dummpy_header_list(co)
+	circular_list(circular_list& list);	//Copy constructor
 };

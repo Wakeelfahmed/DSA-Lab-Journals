@@ -1,26 +1,26 @@
 #include"list.h"
 #include<iostream>
 using namespace std;
-circular_list::circular_list() : Head(NULL) { }
-Node* circular_list::get_head() const { return Head; }
+circular_list::circular_list() : head(NULL) { }
+Node* circular_list::get_head() const { return head; }
 bool circular_list::isEmpty() const {
-	if (Head == NULL)
+	if (head == NULL)
 		return true;
 	return false;
 }
 void circular_list::insert_beg(int v) {
 	Node* NewNode = new Node(v);
 	if (isEmpty()) {
-		Head = NewNode;
-		NewNode->next = Head;
+		head = NewNode;
+		NewNode->next = head;
 	}
 	else {
-		NewNode->next = Head;
-		Node* p = Head;
-		while (p->next != Head)
+		NewNode->next = head;
+		Node* p = head;
+		while (p->next != head)
 			p = p->next;
-		Head = NewNode;
-		p->next = Head;
+		head = NewNode;
+		p->next = head;
 	}
 }
 void circular_list::insert_specfic_Position(int Position, int newvalue) {
@@ -30,8 +30,8 @@ void circular_list::insert_specfic_Position(int Position, int newvalue) {
 		return;
 	}
 	Node* NewNode = new Node(newvalue);		//NewNode->Data = newvalue;
-	Node* p = Head;
-	while (p != NULL)
+	Node* p = head;
+	while (p != head)
 	{
 		if (Position == 1) {
 			insert_beg(newvalue);
@@ -51,11 +51,9 @@ void circular_list::insert_specfic_Position(int Position, int newvalue) {
 	}
 }
 void circular_list::insert_after(int oldvalue, int newvalue) {
-	Node* p = Head;
+	Node* p = head;
 	if (isEmpty())
-	{
 		return;
-	}
 	do
 	{
 		if (p->Data == oldvalue)
@@ -66,62 +64,24 @@ void circular_list::insert_after(int oldvalue, int newvalue) {
 			return;
 		}
 		p = p->next;
-	} while (p != Head);
-
+	} while (p != head);
 }
-//void circular_list::insert_after(int oldvalue, int newvalue) {
-//	Node* temp = Head;
-//	if (Head == NULL)
-//	{
-//		cout << "List is empty"; return;
-//	}
-//	else if (Head != NULL)
-//	{
-//		if (Head->Data == oldvalue) {
-//			Node* t = new Node;
-//			t->Data = newvalue;
-//			t->next = temp->next;
-//			temp->next = t;
-//		}
-//		else if (Head->Data != oldvalue)
-//		{
-//			do {
-//				temp = temp->next;
-//			} while (temp->Data != oldvalue && temp != Head);
-//			if (temp == Head)
-//			{
-//				cout << "Node not found"; exit(0);
-//			}
-//			else {
-//				Node* t = new Node;
-//				t->Data = newvalue;
-//				t->next = temp->next;
-//				temp->next = t;
-//			}
-//		}
-//		return;
-//	}
-//}
 void circular_list::insert_end(int value) {
-	Node* ptr = new Node;
-	ptr->Data = value;
-	ptr->next = NULL;
-	if (Head == NULL)
-	{
-		Head = ptr;
-		ptr->next = Head;
+	Node* NewNode = new Node(value);
+	if (isEmpty()) {
+		head = NewNode;
+		NewNode->next = head;
 	}
-	else
-	{
-		Node* temp = Head;
-		while (temp->next != Head)
+	else {
+		Node* p = head;
+		do
 		{
-			temp = temp->next;
-		}
-		temp->next = ptr;
-		ptr->next = Head;
+			p = p->next;
+		} while (p->next != head);
+		p->next = NewNode;
+		NewNode->next = head;
+		return;
 	}
-
 }
 void circular_list::Display_list() const {
 	if (isEmpty())
@@ -129,28 +89,71 @@ void circular_list::Display_list() const {
 		cout << "list is empty!!" << endl;
 		return;
 	}
-	Node* p = Head;
+	Node* p = head;
 	cout << "List: \t";
 	do
 	{
 		cout << p->Data << "\t";
 		p = p->next;
-	} while (p != Head);
+	} while (p != head);
 	cout << endl;
-	Node* temp = Head;
+	Node* temp = head;
 }
 int Search_in_List(int Value_to_search, circular_list& list) {
 	Node* p = list.get_head();
 	int Position_counter = 1;
-	while (p != NULL)
-	{
+	do {
 		if (p->Data == Value_to_search)
 			return Position_counter;
 		p = p->next;
 		Position_counter++;
-	}
+	} while (p != list.get_head());
 	return 0; // no record found
 }
+void circular_list::delete_Node(int Value_to_delete) {
+	if (isEmpty()) {
+		cout << "List is Empty\n"; return;
+	}
+	else if (!Search_in_List(Value_to_delete, *this)) {
+		cout << "Not found in list\n"; return;
+	}
+	Node* p = head;
+	Node* Temp;
+	if (Value_to_delete == head->Data) {
+		Temp = p;
+		if (head->next == head) {
+			delete Temp; head = NULL; cout << "ONE NODE\n"; return;
+		}
+		else
+		{
+			cout << "IN deleting " << Value_to_delete << endl;
+			do
+			{
+				p = p->next;
+			} while (p->next != head);
+			p->next = head->next;
+			head = head->next;
+			delete Temp;
+			return;
+		}
+	}
+	else
+	{
+		p = head;
+		do
+		{
+			if (p->next->Data == Value_to_delete)
+			{
+				Temp = p->next;
+				p->next = p->next->next;
+				delete Temp;
+				return;
+			}
+			p = p->next;
+		} while (p->next != head);
+	}
+}
+
 circular_list circular_list::concatenate(const circular_list& list2) {
 	circular_list Result = *this;
 	Node* p = get_head();	Node* loop2 = list2.get_head();
@@ -159,9 +162,7 @@ circular_list circular_list::concatenate(const circular_list& list2) {
 
 	while (loop2->next != list2.get_head())
 		loop2 = loop2->next;
-
-	loop2->next = Head;	//connect last node of list2 to head of list1 making circular
-
+	loop2->next = head;	//connect last node of list2 to head of list1 making circular
 	p->next = list2.get_head();//connect last node of list1 to head of list2.
 	cout << "Concatenated list is:\n";
 	Result.Display_list();
@@ -173,64 +174,67 @@ int circular_list::Number_of_Nodes() const {
 		cout << "list is empty!! \n there are no nodes." << endl;
 		return 0;
 	}
-	int Counter = 0;
-	Node* p = Head;
-	while (p != NULL)
+	int Counter = 1;
+	Node* p = head;
+	while (p != head)
 	{
 		Counter++;
 		p = p->next;
 	}
 	return Counter;
 }
-void circular_list::delete_Node(int Value_to_delete) {
-	Node* temp = Head, * t = NULL;
-	if (Head == NULL) {
-		cout << "List is empty"; return;
-	}
-	if (Head->Data == Value_to_delete)
-	{
-		if (Head->next == Head) {
-			delete temp;
-			Head = NULL;
-		}
-		else {
-			do {
-				t = temp;
-				temp = temp->next;
-			} while (temp != Head);
-			Head = Head->next;
-			delete temp; t->next = Head;
-		}
-	}
-	else {
-		do {
-			t = temp;
-			temp = temp->next;
-		} while (temp->Data != Value_to_delete && temp != Head);
-		if (temp->Data == Value_to_delete)
-		{
-			t->next = temp->next;
-			delete temp;
-		}
-		else { cout << "Node not found"; return; }
-	}
-}
+//void circular_list::delete_Node(int Value_to_delete) {
+//	Node* temp = Head, * t = NULL;
+//	if (Head == NULL) {
+//		cout << "List is empty"; return;
+//	}
+//	if (Head->Data == Value_to_delete)
+//	{
+//		if (Head->next == Head) {
+//			delete temp;
+//			Head = NULL;
+//		}
+//		else {
+//			do {
+//				t = temp;
+//				temp = temp->next;
+//			} while (temp != Head);
+//			Head = Head->next;
+//			delete temp; t->next = Head;
+//		}
+//	}
+//	else {
+//		do {
+//			t = temp;
+//			temp = temp->next;
+//		} while (temp->Data != Value_to_delete && temp != Head);
+//		if (temp->Data == Value_to_delete)
+//		{
+//			t->next = temp->next;
+//			delete temp;
+//		}
+//		else { cout << "Node not found"; return; }
+//	}
+//}
 circular_list::~circular_list() {
-	cout << "EN\n";
+	//cout << "Entering ~\n";
 	if (isEmpty())
 		return;
-	Node* p = Head;
-	Node* q = Head->next;
-	while (p != NULL)
-	{
-		if (p->next == Head) {
-			cout << "Leaving\n";
-			return;
-		}
+	Node* p = head;
+	Node* q = head->next;
+	do {
+		//cout << "Deleteing:" << p->Data << endl;
 		delete p;
 		p = q;
-		if (p != NULL)
+		if (p != head)
 			q = q->next;
-	}
-	cout << "Leaving\n";
+		if (p == head) {
+			//cout << "Returing ~\n";
+			//return;
+		}
+	} while (p != head);
+	//cout << "Leaving ~\n";
+}
+circular_list::circular_list(circular_list& list) {
+	head = list.head;
 }

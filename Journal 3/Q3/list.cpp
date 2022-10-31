@@ -44,18 +44,6 @@ void list::insert_specfic_Position(int Position, int newvalue) {
 		position_count++;
 	}
 }
-void list::insert_after(int oldvalue, int newvalue) {
-	if (isEmpty())
-	{
-		cout << "List is Empty"; return;		//Wrong
-	}
-	Node* p = head;				//Wrong
-	while ((p != NULL) && (p->Data != oldvalue)) { p = p->next; }
-	if (p == NULL) { cout << "Node not found"; exit(0); }		//Wrong
-	Node* q = new Node(newvalue);	//q->Data = newvalue;		//Wrong
-	q->next = p->next;			//Wrong
-	p->next = q;				//Wrong
-}								//Wrong
 void list::insert_end(int value) {
 	Node* p = new Node(value);	//p->Data = value;
 	if (isEmpty())
@@ -112,7 +100,7 @@ int list::Number_of_Nodes() const {
 		cout << "list is empty!! \n there are no nodes." << endl;
 		return 0;
 	}
-	int Counter = 0;
+	int Counter = 1;
 	Node* p = head;
 	while (p != NULL)
 	{
