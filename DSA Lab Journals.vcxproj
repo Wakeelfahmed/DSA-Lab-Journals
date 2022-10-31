@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Journal 3\Q3\list.cpp" />
-    <ClCompile Include="Journal 3\Q3\Node.cpp" />
-    <ClCompile Include="Journal 3\Q3\Q3 Source.cpp" />
+    <ClCompile Include="Journal 4\2\Journal 4 Q2Source.cpp" />
+    <ClCompile Include="Journal 4\2\list.cpp" />
+    <ClCompile Include="Journal 4\2\Node.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Journal 3\Q3\list.h" />
-    <ClInclude Include="Journal 3\Q3\Node.h" />
+    <ClInclude Include="Journal 4\2\list.h" />
+    <ClInclude Include="Journal 4\2\Node.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

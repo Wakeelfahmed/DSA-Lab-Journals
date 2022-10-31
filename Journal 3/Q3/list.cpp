@@ -47,15 +47,15 @@ void list::insert_specfic_Position(int Position, int newvalue) {
 void list::insert_after(int oldvalue, int newvalue) {
 	if (isEmpty())
 	{
-		cout << "List is Empty"; return;
+		cout << "List is Empty"; return;		//Wrong
 	}
-	Node* p = head;
+	Node* p = head;				//Wrong
 	while ((p != NULL) && (p->Data != oldvalue)) { p = p->next; }
-	if (p == NULL) { cout << "Node not found"; exit(0); }
-	Node* q = new Node(newvalue);	//q->Data = newvalue;
-	q->next = p->next;
-	p->next = q;
-}//Wrong
+	if (p == NULL) { cout << "Node not found"; exit(0); }		//Wrong
+	Node* q = new Node(newvalue);	//q->Data = newvalue;		//Wrong
+	q->next = p->next;			//Wrong
+	p->next = q;				//Wrong
+}								//Wrong
 void list::insert_end(int value) {
 	Node* p = new Node(value);	//p->Data = value;
 	if (isEmpty())
@@ -106,50 +106,6 @@ void list::delete_Node(int Value_to_delete) {
 		p = p->next;
 	}
 }
-//void list::delete_Node(int Value_to_delete) {
-//	if (isEmpty())
-//	{
-//		cout << "List is Empty"; return;
-//	}
-//	Node* p = head;
-//	while (p != NULL) {
-//		if (p->next == NULL && p->Data != Value_to_delete)
-//		{
-//			cout << "Node not in the list";
-//			return;
-//		}
-//		if (head == tail && Value_to_delete == head->Data) {
-//			cout << "true";
-//			delete p;
-//			head = NULL; tail = NULL;
-//			return;
-//		}
-//		else if (head->Data == Value_to_delete) {
-//			head = p->next;
-//			delete p;
-//			return;
-//		}
-//		else if (tail->Data == Value_to_delete && p->next->Data == Value_to_delete) {
-//			delete p->next;
-//			p->next = NULL;
-//			tail = p;
-//			return;
-//		}
-//		else if (p->next->Data == Value_to_delete && !(tail->Data == Value_to_delete))
-//		{
-//			Node* Temp = p->next->next;
-//			delete p->next;
-//			p->next = Temp;
-//			return;
-//		}
-//		p = p->next;
-//		if (p->next == NULL && p->Data != Value_to_delete)
-//		{
-//			cout << "Node not in the list";
-//			return;
-//		}
-//	}
-//}
 int list::Number_of_Nodes() const {
 	if (isEmpty())
 	{
@@ -178,30 +134,40 @@ void list::Display_list() const {
 		cout << p->Data << "\t";
 		p = p->next;
 	}
+	cout << endl;
 }
-//list::~list() {
-//	Node* currentNode = head; // initialize current node to root
-//	while (currentNode != NULL)
+//list::~list()
+//{
+//	Node* p = head;
+//	int i = 1, num = Number_of_Nodes();
+//	while (i != num)
 //	{
-//				cout << "Deleting NODE:"  <<currentNode->Data << endl;
-//		Node* nextNode = currentNode->next;    // get next node
-//		delete currentNode;                         // delete current
-//		currentNode = nextNode;                     // set current to "old" next
+//		cout << i<<".  Deleting NODE:" << head->Data << "\t\t";
+//		delete_Node(head->Data);
+//		Display_list();
+//		//p = p->next;
+//		i++;
 //	}
 //}
-/*list::~list() {
-	int test;
+list::~list() {
+	if (isEmpty())
+		return;
+	else
+		cout << "List Not empty\n";
+	cout << "Entering ~" << endl;
 	Node* p = head;
 	Node* q = head->next;
 	while (p != NULL)
 	{
-		test = p->next;
-		cout << "Deleting NODE:" << p->Data << "\t\t";		cout << p->next << endl;
-		if (p->next == 0)
-			return;
+		cout << "Deleting:" << p->Data << "\t\t";
+		if (p->next == NULL) {
+
+			cout << "NOW" << endl;
+		}
 		delete p;
 		p = q;
 		if (p != NULL)
 			q = q->next;
 	}
-}*/
+	cout << "Leaving ~" << endl;
+}

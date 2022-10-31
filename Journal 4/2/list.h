@@ -1,14 +1,12 @@
 #pragma once
 #include"Node.h"
-class list
+class circular_list
 {
 private:
-	Node* head;
-	Node* tail;
+	Node* Head;
 public:
-	list();
+	circular_list();
 	Node* get_head() const;
-	Node* get_tail() const;
 	void insert_beg(int v);
 	void insert_end(int value);
 	void insert_specfic_Position(int place, int value);
@@ -16,7 +14,12 @@ public:
 	void delete_Node(int Value_to_delete);
 	void Display_list() const;
 	bool isEmpty() const;
-	int Number_of_Nodes()const ;
-	~list();
-	list()
+	int Number_of_Nodes()const;
+	~circular_list();
+	circular_list concatenate(const circular_list & list2);
+	circular_list(circular_list& obj) {
+		Head = obj.Head;
+	}
+
+	//dummpy_header_list(co)
 };

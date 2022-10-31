@@ -1,14 +1,12 @@
 #pragma once
 #include"Node.h"
-class list
+class dummpy_header_list
 {
 private:
 	Node* head;
-	Node* tail;
 public:
-	list();
+	dummpy_header_list();
 	Node* get_head() const;
-	Node* get_tail() const;
 	void insert_beg(int v);
 	void insert_end(int value);
 	void insert_specfic_Position(int place, int value);
@@ -17,6 +15,6 @@ public:
 	void Display_list() const;
 	bool isEmpty() const;
 	int Number_of_Nodes()const ;
-	~list();
-	list()
+	~dummpy_header_list();
+	//dummpy_header_list(const& i);
 };

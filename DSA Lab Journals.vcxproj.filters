@@ -15,22 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Journal 3\Q3\list.cpp">
+    <ClCompile Include="Journal 4\2\Journal 4 Q2Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Journal 3\Q3\Node.cpp">
+    <ClCompile Include="Journal 4\2\list.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Journal 3\Q3\Q3 Source.cpp">
+    <ClCompile Include="Journal 4\2\Node.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Journal 3\Q3\list.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Journal 4\2\list.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Journal 3\Q3\Node.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Journal 4\2\Node.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

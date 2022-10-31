@@ -2,7 +2,7 @@
 #include<conio.h>
 #include"list.h"
 using namespace std;
-void Swap(list& list) {
+void Swap(dummpy_header_list& list) {
 	Node* Temp;
 	int Half_of_list = list.Number_of_Nodes() / 2;
 	int position_count = 1;
@@ -15,7 +15,7 @@ void Swap(list& list) {
 		position_count++;
 	}
 }
-void Print_Even_Nodes(list list) {
+void Print_Even_Nodes(dummpy_header_list list) {
 	int position_count = 1;
 	Node* p = list.get_head();
 	cout << "Even Values are\n";
@@ -25,7 +25,7 @@ void Print_Even_Nodes(list list) {
 		p = p->next;
 	}
 }
-int Number_of_Nodes(list list) {
+int Number_of_Nodes(dummpy_header_list list) {
 	if (list.isEmpty())
 	{
 		cout << "list is empty!! \n there are no nodes." << endl;
@@ -58,20 +58,19 @@ int Maximum_Number_in_List(Node* head) {
 	}
 	return Maximum_Number;
 }
-void Display_headTail(const list list) {
-if (!list.isEmpty())
-	cout << "Head:" << list.get_head()->Data
-	<< "\tTail:" << list.get_tail()->Data << endl;// "\tnext:"; << list.get_tail()->next << endl;
+void Display_headTail(const dummpy_header_list & list) {
+	if (!list.isEmpty())
+		cout << "Head:" << list.get_head()->next->Data;
+	//<< "\tTail:" << list.get_tail()->Data << endl;// "\tnext:"; << list.get_tail()->next << endl;
 }
 int main() {
-list mylist;
+dummpy_header_list mylist;
+mylist.insert_beg(10);
 mylist.insert_end(1);
 mylist.insert_end(2);
 mylist.insert_end(3);
 mylist.insert_end(4);
-mylist.insert_end(5);
-mylist.Display_list();
-Display_headTail(mylist);//byValue
+//Display_headTail(mylist); cout << endl;//byValue
 	//	int input;
 	//while (1)
 	//{
@@ -80,6 +79,10 @@ Display_headTail(mylist);//byValue
 	//	mylist.Display_list();
 	//	Display_headTail(mylist);
 	//}
+//mylist.insert_beg(12);
+//mylist.insert_after(2,8);
+mylist.Display_list(); mylist.delete_Node(10); 
+mylist.Display_list();
 }
 /*
 for (size_t i = 10; i > 0; i--)
