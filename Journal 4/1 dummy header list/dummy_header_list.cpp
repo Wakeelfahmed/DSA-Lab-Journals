@@ -103,9 +103,7 @@ void dummy_header_list::delete_Node(int Value_to_delete) {
 		cout << "List is Empty\n"; return;
 	}
 	if (!Search_in_List(Value_to_delete, *this)) {
-		cout << "Not found in list\n";
-		cout << "pos" << Search_in_List(Value_to_delete, *this) << endl;
-		return;
+		cout << "Not found in list\n"; return;
 	}
 	Node* p = head->next;
 	Node* Temp;

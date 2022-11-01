@@ -122,11 +122,10 @@ void circular_list::delete_Node(int Value_to_delete) {
 	if (Value_to_delete == head->Data) {
 		Temp = p;
 		if (head->next == head) {
-			delete Temp; head = NULL; cout << "ONE NODE\n"; return;
+			delete Temp; head = NULL; return;
 		}
 		else
 		{
-			cout << "IN deleting " << Value_to_delete << endl;
 			do
 			{
 				p = p->next;
@@ -181,39 +180,6 @@ int circular_list::Number_of_Nodes() const {
 	}
 	return Counter;
 }
-//void circular_list::delete_Node(int Value_to_delete) {
-//	Node* temp = Head, * t = NULL;
-//	if (Head == NULL) {
-//		cout << "List is empty"; return;
-//	}
-//	if (Head->Data == Value_to_delete)
-//	{
-//		if (Head->next == Head) {
-//			delete temp;
-//			Head = NULL;
-//		}
-//		else {
-//			do {
-//				t = temp;
-//				temp = temp->next;
-//			} while (temp != Head);
-//			Head = Head->next;
-//			delete temp; t->next = Head;
-//		}
-//	}
-//	else {
-//		do {
-//			t = temp;
-//			temp = temp->next;
-//		} while (temp->Data != Value_to_delete && temp != Head);
-//		if (temp->Data == Value_to_delete)
-//		{
-//			t->next = temp->next;
-//			delete temp;
-//		}
-//		else { cout << "Node not found"; return; }
-//	}
-//}
 circular_list::~circular_list() {
 	//cout << "Entering ~\n";
 	if (isEmpty())
