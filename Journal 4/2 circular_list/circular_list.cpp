@@ -1,4 +1,4 @@
-#include"list.h"
+#include"circular_list.h"
 #include<iostream>
 using namespace std;
 circular_list::circular_list() : head(NULL) { }
@@ -153,13 +153,11 @@ void circular_list::delete_Node(int Value_to_delete) {
 		} while (p->next != head);
 	}
 }
-
 circular_list circular_list::concatenate(const circular_list& list2) {
 	circular_list Result = *this;
 	Node* p = get_head();	Node* loop2 = list2.get_head();
 	while (p->next != get_head())
 		p = p->next;
-
 	while (loop2->next != list2.get_head())
 		loop2 = loop2->next;
 	loop2->next = head;	//connect last node of list2 to head of list1 making circular
