@@ -1,6 +1,6 @@
 #include<iostream>
 #include<conio.h>
-#include"list.h"
+#include"circular_list.h"
 using namespace std;
 //void Swap(circular_list& list) {
 //	Node* Temp;
