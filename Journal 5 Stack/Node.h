@@ -1,10 +1,11 @@
 #pragma once
+#include"Employee.h"
 class Node
 {
 public:
 	Node* prev;
-	int data;
+	Employee data;
 	Node* next;
 	Node();
-	Node(int Data);
+	Node(Employee Data);
 };

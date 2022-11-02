@@ -6,7 +6,7 @@ bool Doubly_list::isEmpty() {
 		return true;
 	return false;
 }
-void Doubly_list::insert_beg(int value) {
+void Doubly_list::insert_beg(Employee value) {
 	Node* temp;
 	temp = new Node(value);
 	if (head == NULL)
@@ -18,7 +18,7 @@ void Doubly_list::insert_beg(int value) {
 	head->prev = temp;
 	head = temp;
 }
-void Doubly_list::insert_end(int value) {
+void Doubly_list::insert_end(Employee value) {
 	Node* s, * temp;
 	temp = new Node(value);
 	if (head == NULL)
@@ -26,7 +26,6 @@ void Doubly_list::insert_end(int value) {
 		head = temp;
 		return;
 	}
-	// List already has element(s)
 	else
 	{
 		s = head;
@@ -38,10 +37,12 @@ void Doubly_list::insert_end(int value) {
 }
 void Doubly_list::Display_List() {
 	Node* p = head;
-	cout << "List:\t";
+	cout << "List:\n";
 	while (p != NULL)
 	{
-		cout << p->data << "\t";
+		cout << "NIC:" << p->data.NIC << "\tName:" 
+			<< p->data.EmpName << "\tID:" << p->data.EmpID 
+			<< "\tJOD:" << p->data.Joining_Data << endl;
 		p = p->next;
 	}	cout << endl;
 }
