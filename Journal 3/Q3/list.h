@@ -18,5 +18,5 @@ public:
 	bool isEmpty() const;
 	int Number_of_Nodes()const ;
 	~list();
-	list()
+	//list();
 };

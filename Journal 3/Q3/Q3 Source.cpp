@@ -58,7 +58,7 @@ int Maximum_Number_in_List(Node* head) {
 	}
 	return Maximum_Number;
 }
-void Display_headTail(const list list) {
+void Display_headTail(const list &list) {
 if (!list.isEmpty())
 	cout << "Head:" << list.get_head()->Data
 	<< "\tTail:" << list.get_tail()->Data << endl;// "\tnext:"; << list.get_tail()->next << endl;

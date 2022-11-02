@@ -15,21 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Journal 4\2 circular_list\circular_list.cpp">
+    <ClCompile Include="Journal 5 Stack\Doubly_list.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Journal 4\2 circular_list\Journal 4 Q2Source.cpp">
+    <ClCompile Include="Journal 5 Stack\Node.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Journal 4\2 circular_list\Node.cpp">
+    <ClCompile Include="Journal 5 Stack\Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Journal 4\2 circular_list\circular_list.h">
+    <ClInclude Include="Journal 5 Stack\Doubly_list.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Journal 4\2 circular_list\Node.h">
+    <ClInclude Include="Journal 5 Stack\Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

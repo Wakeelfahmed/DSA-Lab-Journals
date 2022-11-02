@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Journal 4\2 circular_list\circular_list.cpp" />
-    <ClCompile Include="Journal 4\2 circular_list\Journal 4 Q2Source.cpp" />
-    <ClCompile Include="Journal 4\2 circular_list\Node.cpp" />
+    <ClCompile Include="Journal 5 Stack\Doubly_list.cpp" />
+    <ClCompile Include="Journal 5 Stack\Node.cpp" />
+    <ClCompile Include="Journal 5 Stack\Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Journal 4\2 circular_list\circular_list.h" />
-    <ClInclude Include="Journal 4\2 circular_list\Node.h" />
+    <ClInclude Include="Journal 5 Stack\Doubly_list.h" />
+    <ClInclude Include="Journal 5 Stack\Node.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
