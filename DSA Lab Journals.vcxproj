@@ -18,17 +18,6 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Journal 5 Stack\Doubly_list.cpp" />
-    <ClCompile Include="Journal 5 Stack\Employee.cpp" />
-    <ClCompile Include="Journal 5 Stack\Node.cpp" />
-    <ClCompile Include="Journal 5 Stack\Source.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Journal 5 Stack\Doubly_list.h" />
-    <ClInclude Include="Journal 5 Stack\Employee.h" />
-    <ClInclude Include="Journal 5 Stack\Node.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
