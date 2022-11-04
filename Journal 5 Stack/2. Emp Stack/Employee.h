@@ -4,14 +4,13 @@
 using namespace std;
 class Employee
 {
-private:
-	string EmpID;
+public:
 	string EmpName;
+	string EmpID;
 	string NIC;
 	string Joining_Data;
 	long long int Salary;
 	int Bonus;
-public:
 	Employee();
 	Employee(string name, string id, string NIC, string Joining_Data, long long int Salary, int Bonus);
 	string get_EmpName() const;
@@ -21,8 +20,7 @@ public:
 	long long int get_Salary() const;
 	int get_Bonus() const;
 	void Display_Employee_Details();
-	void set_Salary(long long int newSalary);
-	void set_Bonus(int NewBonus);
-	void Input();
+
+
 };
 

@@ -5,10 +5,10 @@ Employee::Employee(string name, string id, string NIC, string Joining_Data, long
 void Employee::Display_Employee_Details() {
 	cout << "NIC:" << NIC
 		<< "\tName:" << EmpName
-		<< " \tID:" << EmpID
-		<< " \tJOD:" << Joining_Data
-		<< " \tSalary:" << Salary
-		<< " \tBouns:" << Bonus << endl;
+		<< "\tID:" << EmpID
+		<< "\tJOD:" << Joining_Data
+		<< "\tSalary" << Salary
+		<< "\tBouns" << Bonus << "\tSalary" << endl;
 }
 string Employee::get_EmpName() const { return EmpName; }
 string Employee::get_EmpID() const { return EmpID; }
@@ -16,13 +16,3 @@ string Employee::get_NIC() const { return NIC; }
 string Employee::get_Joining_Data() const { return Joining_Data; }
 long long int Employee::get_Salary() const { return Salary; }
 int Employee::get_Bonus() const { return Bonus; }
-void Employee::set_Salary(long long int newSalary) {
-	Salary = newSalary;
-}
-void Employee::set_Bonus(int NewBonus) {
-	Bonus = NewBonus;
-}
-void Employee::Input() {
-	cout << "Enter Employee Name:"; cin >> EmpName;
-	cout << "Enter Employee ID:"; cin >> EmpID;
-}
