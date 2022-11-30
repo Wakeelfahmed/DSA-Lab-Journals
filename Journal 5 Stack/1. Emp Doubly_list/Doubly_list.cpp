@@ -1,38 +1,37 @@
 #include<iostream>
 #include "Doubly_list.h"
 using namespace std;
+Doubly_list::Doubly_list() :head(0) {}
 bool Doubly_list::isEmpty() {
 	if (head == 0)
 		return true;
 	return false;
 }
 void Doubly_list::insert_beg(Employee value) {
-	Node* temp;
-	temp = new Node(value);
+	Node* New_Node = new Node(value);
 	if (head == NULL)
 	{
-		head = temp;
+		head = New_Node;
 		return;
 	}
-	temp->next = head;
-	head->prev = temp;
-	head = temp;
+	New_Node->next = head;
+	head->prev = New_Node;
+	head = New_Node;
 }
 void Doubly_list::insert_end(Employee value) {
-	Node* s, * temp;
-	temp = new Node(value);
+	Node* p, * New_Node = new Node(value);
 	if (head == NULL)
 	{
-		head = temp;
+		head = New_Node;
 		return;
 	}
 	else
 	{
-		s = head;
-		while (s->next != NULL)
-			s = s->next;
-		s->next = temp;
-		temp->prev = s;
+		p = head;
+		while (p->next != NULL)
+			p = p->next;
+		p->next = New_Node;
+		New_Node->prev = p;
 	}
 }
 bool Is_Present_in_list(const Doubly_list list, string EmployeeID) {
@@ -62,7 +61,6 @@ void Doubly_list::insert_after(Employee prev_Employee, Employee v) {
 		}
 		p = p->next;
 	}
-
 }
 void Doubly_list::Display_List() {
 	if (isEmpty())
@@ -159,7 +157,7 @@ void Doubly_list::Swap(int pos_i, int pos_j) {
 	get_Node_by_Pos(pos_j)->data = Temp_Data;
 }
 void Doubly_list::clear() {
-	Node* p = head, *temp;
+	Node* p = head, * temp;
 	while (p != NULL)
 	{
 		temp = p;
@@ -167,4 +165,18 @@ void Doubly_list::clear() {
 		delete temp;
 	}
 	head = NULL;
+}
+void Doubly_list::reverse(Node* head) {
+	Node* p1, * p2;
+	p1 = head;
+	p2 = p1->next;
+	p1->next = NULL;
+	p1->prev = p2;
+	while (p2 != NULL) {
+		p2->prev = p2->next;
+		p2->next = p1;
+		p1 = p2;
+		p2 = p2->prev;  //loop
+	}
+	head = p1;
 }

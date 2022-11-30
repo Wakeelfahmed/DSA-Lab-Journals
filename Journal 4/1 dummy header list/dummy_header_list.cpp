@@ -11,9 +11,7 @@ int dummy_header_list::get_Node_Data(int Position_of_Node) {
 	while (p != NULL)
 	{
 		if (pos == Position_of_Node)
-		{
 			return p->Data;
-		}
 		p = p->next;
 		pos++;
 	}
@@ -24,12 +22,12 @@ bool dummy_header_list::isEmpty() const {
 	return false;
 }
 void dummy_header_list::insert_beg(int v) {
-	Node* p = new Node(v);
+	Node* New_Node = new Node(v);
 	if (isEmpty())
-		head->next = p;
+		head->next = New_Node;
 	else {
-		p->next = head->next;
-		head->next = p;
+		New_Node->next = head->next;
+		head->next = New_Node;
 	}
 }
 void dummy_header_list::insert_specfic_Position(int Position, int newvalue) {
@@ -38,7 +36,7 @@ void dummy_header_list::insert_specfic_Position(int Position, int newvalue) {
 		cout << "List has less nodes than the place, Node CAN't be inserted!!\n";
 		return;
 	}
-	Node* NewNode = new Node(newvalue);		//NewNode->Data = newvalue;
+	Node* NewNode = new Node(newvalue);
 	Node* p = head;
 	while (p->next != NULL)
 	{

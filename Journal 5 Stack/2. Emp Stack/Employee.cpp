@@ -7,8 +7,8 @@ void Employee::Display_Employee_Details() {
 		<< "\tName:" << EmpName
 		<< "\tID:" << EmpID
 		<< "\tJOD:" << Joining_Data
-		<< "\tSalary" << Salary
-		<< "\tBouns" << Bonus << "\tSalary" << endl;
+		<< "\tSalary:" << Salary
+		<< "\tBouns:" << Bonus << endl;
 }
 string Employee::get_EmpName() const { return EmpName; }
 string Employee::get_EmpID() const { return EmpID; }

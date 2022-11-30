@@ -6,35 +6,32 @@ bool Doubly_list::isEmpty() {
 		return true;
 	return false;
 }
-Employee Doubly_list::pop() {
-	Node* p = top;
-	Employee Temp;
-	while (p->next->next != NULL)
-	{
-		p = p->next;
-	}
-	Temp = p->next->data;
-	cout <<"Last Node"<< Temp.EmpName << endl;
-	delete p->next;
-	p->next = NULL;
-	return Temp;
-}
 void Doubly_list::push(Employee value) {
-	Node* s, * temp;
-	temp = new Node(value);
+	Node* p, * New_Node = new Node(value);
 	if (top == NULL)
 	{
-		top = temp;
+		top = New_Node;
 		return;
 	}
 	else
 	{
-		s = top;
-		while (s->next != NULL)
-			s = s->next;
-		s->next = temp;
-		temp->prev = s;
+		p = top;
+		while (p->next != NULL)
+			p = p->next;
+		p->next = New_Node;
+		New_Node->prev = p;
 	}
+}
+Employee Doubly_list::pop() {
+	Node* p = top;
+	Employee Temp;
+	while (p->next->next != NULL)
+		p = p->next;
+	Temp = p->next->data;
+	cout << "Last Node" << Temp.EmpName << endl;
+	delete p->next;
+	p->next = NULL;
+	return Temp;
 }
 void Doubly_list::Display_List() {
 	Node* p = top;

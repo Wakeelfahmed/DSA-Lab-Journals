@@ -15,27 +15,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Journal 5 Stack\1. Emp Doubly_list\Doubly_list.cpp">
+    <ClCompile Include="Journal 5 Stack\2. Emp Stack\Doubly_list.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Journal 5 Stack\1. Emp Doubly_list\Employee.cpp">
+    <ClCompile Include="Journal 5 Stack\2. Emp Stack\Employee.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Journal 5 Stack\1. Emp Doubly_list\Node.cpp">
+    <ClCompile Include="Journal 5 Stack\2. Emp Stack\Node.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Journal 5 Stack\1. Emp Doubly_list\Source.cpp">
+    <ClCompile Include="Journal 5 Stack\2. Emp Stack\Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Journal 5 Stack\1. Emp Doubly_list\Doubly_list.h">
+    <ClInclude Include="Journal 5 Stack\2. Emp Stack\Doubly_list.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Journal 5 Stack\1. Emp Doubly_list\Employee.h">
+    <ClInclude Include="Journal 5 Stack\2. Emp Stack\Employee.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Journal 5 Stack\1. Emp Doubly_list\Node.h">
+    <ClInclude Include="Journal 5 Stack\2. Emp Stack\Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

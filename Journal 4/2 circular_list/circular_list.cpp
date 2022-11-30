@@ -20,7 +20,7 @@ void circular_list::insert_beg(int v) {
 		while (p->next != head)
 			p = p->next;
 		head = NewNode;
-		p->next = head;
+		p->next = head;  //last Node point to head
 	}
 }
 void circular_list::insert_specfic_Position(int Position, int newvalue) {
@@ -97,7 +97,6 @@ void circular_list::Display_list() const {
 		p = p->next;
 	} while (p != head);
 	cout << endl;
-	Node* temp = head;
 }
 int Search_in_List(int Value_to_search, circular_list& list) {
 	Node* p = list.get_head();

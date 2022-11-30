@@ -4,7 +4,7 @@ class Doubly_list
 {
 public:
 	Node* head;
-	Doubly_list() :head(0) {}
+	Doubly_list();
 	bool isEmpty();
 	void insert_beg(Employee v);
 	void insert_end(Employee v);
@@ -16,4 +16,5 @@ public:
 	void Swap(int pos_i, int pos_j);
 	Node* get_Node_by_Pos(int i) const;
 	void clear();
+	void reverse(Node* head);
 };

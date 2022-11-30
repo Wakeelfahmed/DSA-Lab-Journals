@@ -19,15 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Journal 5 Stack\1. Emp Doubly_list\Doubly_list.cpp" />
-    <ClCompile Include="Journal 5 Stack\1. Emp Doubly_list\Employee.cpp" />
-    <ClCompile Include="Journal 5 Stack\1. Emp Doubly_list\Node.cpp" />
-    <ClCompile Include="Journal 5 Stack\1. Emp Doubly_list\Source.cpp" />
+    <ClCompile Include="Journal 5 Stack\2. Emp Stack\Doubly_list.cpp" />
+    <ClCompile Include="Journal 5 Stack\2. Emp Stack\Employee.cpp" />
+    <ClCompile Include="Journal 5 Stack\2. Emp Stack\Node.cpp" />
+    <ClCompile Include="Journal 5 Stack\2. Emp Stack\Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Journal 5 Stack\1. Emp Doubly_list\Doubly_list.h" />
-    <ClInclude Include="Journal 5 Stack\1. Emp Doubly_list\Employee.h" />
-    <ClInclude Include="Journal 5 Stack\1. Emp Doubly_list\Node.h" />
+    <ClInclude Include="Journal 5 Stack\2. Emp Stack\Doubly_list.h" />
+    <ClInclude Include="Journal 5 Stack\2. Emp Stack\Employee.h" />
+    <ClInclude Include="Journal 5 Stack\2. Emp Stack\Node.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
