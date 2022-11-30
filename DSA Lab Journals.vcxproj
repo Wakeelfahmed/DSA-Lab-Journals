@@ -18,21 +18,10 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Journal 5 Stack\2. Emp Stack\Doubly_list.cpp" />
-    <ClCompile Include="Journal 5 Stack\2. Emp Stack\Employee.cpp" />
-    <ClCompile Include="Journal 5 Stack\2. Emp Stack\Node.cpp" />
-    <ClCompile Include="Journal 5 Stack\2. Emp Stack\Source.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Journal 5 Stack\2. Emp Stack\Doubly_list.h" />
-    <ClInclude Include="Journal 5 Stack\2. Emp Stack\Employee.h" />
-    <ClInclude Include="Journal 5 Stack\2. Emp Stack\Node.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c25fcfeb-7268-414c-ad8c-df2c698beb9f}</ProjectGuid>
+    <ProjectGuid>{078a3606-18f3-4e5a-9a8b-08137bdead82}</ProjectGuid>
     <RootNamespace>DSALabJournals</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -137,6 +126,13 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Journal 6\Source.cpp" />
+    <ClCompile Include="Journal 6\Stack.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Journal 6\Stack.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

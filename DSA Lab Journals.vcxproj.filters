@@ -15,27 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Journal 5 Stack\2. Emp Stack\Doubly_list.cpp">
+    <ClCompile Include="Journal 6\Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Journal 5 Stack\2. Emp Stack\Employee.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Journal 5 Stack\2. Emp Stack\Node.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Journal 5 Stack\2. Emp Stack\Source.cpp">
+    <ClCompile Include="Journal 6\Stack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Journal 5 Stack\2. Emp Stack\Doubly_list.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Journal 5 Stack\2. Emp Stack\Employee.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Journal 5 Stack\2. Emp Stack\Node.h">
+    <ClInclude Include="Journal 6\Stack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
