@@ -195,7 +195,7 @@ string infix_To_postfix(string Expression) {
 		cout << "CLEARING Inserting in ans:" << char(Operator.get_top_Value()) << endl;
 		Postfix += Operator.pop();	Postfix += " ";
 	}
-	cout << "RESULTANT POSTFIX : " << Postfix << endl;
+	cout << "RESULTANT POSTFIX EXPRESSION IS " << Postfix << endl;
 	Operator.Display_Stack();
 	return Postfix;
 }
