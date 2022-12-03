@@ -14,9 +14,7 @@ void Decimal_To_Binary(int number) {
 		}
 	}
 	else
-	{
-		cout << "Enter Positive Number"; return;
-	}
+		cout << "Enter Positive Number";
 }
 void Evaluation_Postfix(string Expression) {
 	Stack <char> obj;
@@ -61,18 +59,6 @@ void Evaluation_Postfix(string Expression) {
 	while (obj.get_top() != -1)
 		cout << obj.pop() << " ";
 }
-int Get_Precendence(char elem)
-{
-	switch (elem)
-	{
-	case '#': return 0;
-	case '(': return 1;
-	case '+':
-	case '-': return 2;
-	case '*':
-	case '/': return 3;
-	}
-}
 string Reverse_String(string String_To_Reverse) {
 	Stack<char>obj;
 	for (int i = 0; i < String_To_Reverse.size(); i++)
@@ -104,16 +90,28 @@ bool balanced_Expression(string Expression) {
 	else
 		return 0;
 }
+int Get_Precendence(char elem)
+{
+	switch (elem)
+	{
+	//case '#': return 0;
+	case '(': return 1;
+	case '+':
+	case '-': return 2;
+	case '*':
+	case '/': return 3;
+	case '^': return 4;
+	}
+}
 string infix_To_postfix(string Expression) {
-	Stack<char> Operator;
-	string Postfix;
+	Stack<char> Operator;	string Postfix;
 	/*	RULES:
 		1)  '(' pushed directly
 		2)  num/alpha appended to output directly
-		3)  *, /, -, +, ^ can be pushed on '('
-		4   ^ can be pushed over +, - , *
-			* cant come over ^ , *, /
-			/ CANT come over *, /
+		3)  *, /, -, +, ^ can be pushed on '('(Pre 1)
+		4   ^(Pre 4) can be pushed over +, - , *, (
+			*, / CANT come over ^ , *, /
+		5)  +, - CANT come over ^, *, / +, -   
 	*/
 	for (int i = 0; i < Expression.length(); i++)
 	{
@@ -125,34 +123,22 @@ string infix_To_postfix(string Expression) {
 			}
 			Postfix += " ";
 		}
-		else if (Expression[i] == ')')
-			while (Operator.get_top() != -1)
-			{
-				if (Operator.get_top_Value() == '(') {
-					cout << "Poped (\n";
-					Operator.pop();
-					break;
-				}
-				cout << "Inserting in ans:" << Operator.get_top_Value() << endl;
-				Postfix += Operator.pop(); Postfix += " ";
-			}
-		else if (Expression[i] == '(') {
-			Operator.push('(');
-			cout << "Pushed (\n";
+		else if (Expression[i] == ')') {
+			while (Operator.get_top_Value() != '(')
+				Postfix = (Postfix + Operator.pop() + "  ");
+			Operator.pop();
 		}
-		else if (Expression[i] == '-' || Expression[i] == '+' || Expression[i] == '/'
-			|| Expression[i] == '*' || Expression[i] == '(' || Expression[i] == ')')
+		else if (Expression[i] == '(')
+			Operator.push('(');
+		else if (Expression[i] >= char(40) && Expression[i] <= char(43) || Expression[i] == '-'
+			|| Expression[i] == '/' || Expression[i] == '^') //all operators
 		{
-			if (
-				((Expression[i] == '+' || Expression[i] == '-') && Operator.get_top_Value() == '*')
-				|| ((Expression[i] == '+' || Expression[i] == '-') && Operator.get_top_Value() == '/')
-				|| ((Expression[i] == '+' || Expression[i] == '-') && Operator.get_top_Value() == '/')
-				|| Expression[i] == Operator.get_top_Value()
-				|| Expression[i] == '/' && Operator.get_top_Value() == '*')
+			while (Get_Precendence(Operator.get_top_Value()) >= Get_Precendence(Expression[i]) 
+				&& !(Expression[i] == '^' && Operator.get_top_Value() == '^'))
+				Postfix = Postfix + Operator.pop() + " ";
+			Operator.push(Expression[i]);
+			/*if (Get_Precendence(Expression[i]) <= Get_Precendence(Operator.get_top_Value()))
 			{
-				//4)  + & - CANT come over ^, *, / +, -   
-				//		pop until it reaches less precedence one and append to OUT & push 
-				cout << "entering\n";
 				while (Operator.get_top() != -1) {
 					if (
 						((Expression[i] == '+' || Expression[i] == '-') && Operator.get_top_Value() == '(')
@@ -161,38 +147,23 @@ string infix_To_postfix(string Expression) {
 					{
 						break;
 					}
-					cout << "ANS was NOW: " << Postfix << endl;
-					cout << "Inserting END in ans:" << Operator.get_top_Value() << endl;
-					int char_read = Operator.pop();
-					cout << "Char Read is : " << char(char_read) << endl;
-					Postfix += char_read;	Postfix += " ";
-					cout << "ANS IS NOW: " << Postfix << endl;
+					Postfix += Operator.pop();	Postfix += " ";
 				}
-				cout << "Left\n";
 				Operator.push(Expression[i]);
 			}
 			if (
 				Operator.get_top() == -1
-				|| ((Expression[i] == '*' || Expression[i] == '/') && Operator.get_top_Value() == '-')
-				|| ((Expression[i] == '*' || Expression[i] == '/') && Operator.get_top_Value() == '+')
-				|| ((Expression[i] == '+' || Expression[i] == '*') && Operator.get_top_Value() == '(')
-				|| (Expression[i] == '-' && Operator.get_top_Value() == '(')
-				|| (Expression[i] == '/' && Operator.get_top_Value() == '(')
-				|| (Expression[i] == '^' && Operator.get_top_Value() == '(')
+				|| Get_Precendence(Expression[i]) > Get_Precendence(Operator.get_top_Value())
 				) {
-				cout << "Pushing :: " << Expression[i] << endl;
 				Operator.push(Expression[i]);
-			}
+			}*/
 		}
 		cout << "Active::" << Expression[i] << endl;
 		cout << "Ans:" << Postfix << endl;
 		Operator.Display_Stack();
 	}
-
-
-	while (Operator.get_top() != -1)
-	{
-		cout << "CLEARING Inserting in ans:" << char(Operator.get_top_Value()) << endl;
+	cout << "CLEARING\n";
+	while (Operator.get_top() != -1) {
 		Postfix += Operator.pop();	Postfix += " ";
 	}
 	cout << "RESULTANT POSTFIX : " << Postfix << endl;
@@ -201,19 +172,9 @@ string infix_To_postfix(string Expression) {
 }
 int main() {
 	string Expression;
-	Stack<int>obj;
 	while (1)
 	{
-		cout << "Enter expr to check:";
-		cin >> Expression;
-		infix_To_postfix(Expression);
-		_getch();
-		system("CLS");
+		cout << "Enter expr to check:";		cin >> Expression;
+		infix_To_postfix(Expression);		_getch();		system("CLS");
 	}
-	/*bool ans = balanced_Expression(Expression);
-	if (ans)
-		cout << "balanced expression" << endl;
-	else
-		cout << "Unbalanced expression" << endl;*/
-
 }
