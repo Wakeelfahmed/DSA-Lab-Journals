@@ -72,18 +72,12 @@ bool balanced_Expression(string Expression) {
 	Stack<char>obj;
 	for (int i = 0; i < Expression.length(); i++)
 	{
-		if (Expression[i] == '(')
+		if (obj.get_top() == -1)
 			obj.push(Expression[i]);
-		else if (Expression[i] == ')')
-		{
-			if (obj.get_top() == -1)
-				return 0;
-			while (obj.arr[obj.top] != '(' || obj.arr[obj.top] == '(')
-			{
-				obj.pop();
-				break;
-			}
-		}
+		else if ((obj.get_top_Value() == '(' && Expression[i] == ')') || (obj.get_top_Value() == '[' && Expression[i] == ']'))
+			obj.pop();
+		else
+			obj.push(Expression[i]);
 	}
 	if (obj.get_top() == -1)
 		return 1;
@@ -94,7 +88,6 @@ int Get_Precendence(char elem)
 {
 	switch (elem)
 	{
-	//case '#': return 0;
 	case '(': return 1;
 	case '+':
 	case '-': return 2;
@@ -105,14 +98,6 @@ int Get_Precendence(char elem)
 }
 string infix_To_postfix(string Expression) {
 	Stack<char> Operator;	string Postfix;
-	/*	RULES:
-		1)  '(' pushed directly
-		2)  num/alpha appended to output directly
-		3)  *, /, -, +, ^ can be pushed on '('(Pre 1)
-		4   ^(Pre 4) can be pushed over +, - , *, (
-			*, / CANT come over ^ , *, /
-		5)  +, - CANT come over ^, *, / +, -   
-	*/
 	for (int i = 0; i < Expression.length(); i++)
 	{
 		if (isalnum(Expression[i])) {
@@ -125,49 +110,21 @@ string infix_To_postfix(string Expression) {
 		}
 		else if (Expression[i] == ')') {
 			while (Operator.get_top_Value() != '(')
-				Postfix = (Postfix + Operator.pop() + "  ");
+				Postfix = (Postfix + Operator.pop() + " ");
 			Operator.pop();
 		}
 		else if (Expression[i] == '(')
 			Operator.push('(');
-		else if (Expression[i] >= char(40) && Expression[i] <= char(43) || Expression[i] == '-'
-			|| Expression[i] == '/' || Expression[i] == '^') //all operators
-		{
-			while (Get_Precendence(Operator.get_top_Value()) >= Get_Precendence(Expression[i]) 
+		else {
+			while (Get_Precendence(Operator.get_top_Value()) >= Get_Precendence(Expression[i])
 				&& !(Expression[i] == '^' && Operator.get_top_Value() == '^'))
 				Postfix = Postfix + Operator.pop() + " ";
 			Operator.push(Expression[i]);
-			/*if (Get_Precendence(Expression[i]) <= Get_Precendence(Operator.get_top_Value()))
-			{
-				while (Operator.get_top() != -1) {
-					if (
-						((Expression[i] == '+' || Expression[i] == '-') && Operator.get_top_Value() == '(')
-						|| ((Expression[i] == '/' || Expression[i] == '*') && (Operator.get_top_Value() == '+' || Operator.get_top_Value() == '-'))
-						)
-					{
-						break;
-					}
-					Postfix += Operator.pop();	Postfix += " ";
-				}
-				Operator.push(Expression[i]);
-			}
-			if (
-				Operator.get_top() == -1
-				|| Get_Precendence(Expression[i]) > Get_Precendence(Operator.get_top_Value())
-				) {
-				Operator.push(Expression[i]);
-			}*/
 		}
-		cout << "Active::" << Expression[i] << endl;
-		cout << "Ans:" << Postfix << endl;
-		Operator.Display_Stack();
 	}
-	cout << "CLEARING\n";
-	while (Operator.get_top() != -1) {
-		Postfix += Operator.pop();	Postfix += " ";
-	}
+	while (Operator.get_top() != -1)
+		Postfix = Postfix + Operator.pop() + " ";
 	cout << "RESULTANT POSTFIX : " << Postfix << endl;
-	Operator.Display_Stack();
 	return Postfix;
 }
 int main() {
