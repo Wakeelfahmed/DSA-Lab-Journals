@@ -2,7 +2,7 @@
 #include<iostream>
 using namespace std;
 bool Dynamic_Queue::isEmpty() const {
-	if (Queue.Number_of_Nodes() == 0)	
+	if (Queue.Number_of_Nodes() == 0)
 		return true; return false;
 }
 void Dynamic_Queue::Insert_Right(int value) {
@@ -32,4 +32,8 @@ void Dynamic_Queue::display() const {
 		cout << "Queue is empty" << endl;
 	else
 		Queue.Display_list();
+}
+void Dynamic_Queue::Empty_Queue() {
+	while (!Queue.isEmpty())
+		Queue.delete_Node(Queue.get_head()->Data);
 }

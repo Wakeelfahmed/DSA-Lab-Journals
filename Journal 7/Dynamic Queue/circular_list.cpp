@@ -57,7 +57,8 @@ void circular_list::Display_list() const {
 }
 void circular_list::delete_Node(char Value_to_delete) {
 	if (isEmpty()) {
-		cout << "List is Empty\n"; return;
+		//cout << "List is Empty\n"; 
+		return;
 	}
 	//else if (!Search_in_List(Value_to_delete, *this)) {
 	//	cout << "Not found in list\n"; return;

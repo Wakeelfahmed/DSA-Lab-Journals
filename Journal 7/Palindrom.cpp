@@ -8,7 +8,7 @@ int main() {
 	Dynamic_Queue Queue;
 	while (1)
 	{
-		cout << "Enter String to check for palidome ";
+		cout << "Enter String to check for palindrome: ";
 		cin >> astring;
 		for (int i = 0; i < astring.length(); i++)
 		{
@@ -19,7 +19,9 @@ int main() {
 		for (int i = 0; i < astring.length(); i++)
 		{
 			if (Stack.pop() != Queue.Remove_Left()) {
-				check = 0;
+				check = 0; 
+				Stack.top = -1;	//empty the stack
+				Queue.Empty_Queue(); //empty the Queue
 				break;
 			}
 		}

@@ -11,4 +11,5 @@ public:
 	int Remove_Right();
 	int getFront() const;
 	void display() const;
+	void Empty_Queue();
 };
