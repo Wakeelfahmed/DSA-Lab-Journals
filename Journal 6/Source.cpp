@@ -127,8 +127,19 @@ string infix_To_postfix(string Expression) {
 	cout << "RESULTANT POSTFIX : " << Postfix << endl;
 	return Postfix;
 }
+int mystery(int n, int k) {
+	if (n == 0)
+		return 0;
+	else
+	{
+		int x = (mystery(n - 1, k) + k) % n;
+		cout << x << endl;
+		return x;
+	}
+}
 int main() {
 	string Expression;
+	cout << "Final ans:" << mystery(4, 2) << endl;
 	while (1)
 	{
 		cout << "Enter expr to check:";		cin >> Expression;
