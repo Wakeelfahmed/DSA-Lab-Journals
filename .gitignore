@@ -362,3 +362,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /enc_temp_folder/4a80e7d6d12efeb7d46dd4add5b914e9
+/DSA Lab Journals.vcxproj
+/DSA Lab Journals.vcxproj.filters
+/.gitignore
