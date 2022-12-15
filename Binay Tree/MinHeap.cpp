@@ -40,7 +40,7 @@ public:
 		if (heap_size == 0) {
 			cout << "Heap underflow";	return -1;
 		}
-		if (heap_size == 1)
+		if (heap_size == 1) //just one key
 		{
 			heap_size--;
 			return arr[0];
@@ -77,7 +77,6 @@ public:
 		decreaseKey(i, INT_MIN);
 		extractMin();
 	}
-
 };
 int main() {
 	MinHeap min(5);
