@@ -63,12 +63,15 @@ int multiply(int array[], int n)
 		pro = pro * array[i];
 	return pro;
 }
+int Ackermann(int m, int n)
+{
+	if (m == 0)   return   n + 1;
+	else  if (m > 0 && n == 0)   return  Ackermann(m - 1, 1);
+	else  if (m > 0 && n > 0)
+		return   Ackermann(m - 1, Ackermann(m, n - 1));
+}
+
 int main()
 {
-	int array[] = { 1, 2, 3, 4, 5, 6 };
-	cout << "Array elements are: ";
-	int n = sizeof(array) / sizeof(array[0]);
-	for (int i = 0; i < n; i++)
-		cout << array[i] << "\t";
-	cout << endl << "Product of the array is:" << multiply(array, n);
+	cout << Ackermann(3, 4);
 }
